@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/copia2"
+    tools:context=".MenuInvitado">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarInvitado"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:background="@color/negro" />
+
+
+    <TextView
+        android:id="@+id/titulo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:layout_below="@id/toolbarInvitado"
+        android:fontFamily="@font/titulin"
+        android:textColor="@color/blanquito"
+        android:text="Descripción rápida"
+        android:textSize="30dp"></TextView>
+
+    <VideoView
+        android:layout_marginTop="70dp"
+        android:id="@+id/videoView3"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_width="250dp"
+        android:layout_height="300dp" />
+
+    <ImageView
+
+        android:id="@+id/imageninfo"
+        android:layout_below="@id/videoView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/info"
+        android:foregroundGravity="center_horizontal" />
+
+
+</RelativeLayout>

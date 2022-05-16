@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/copia2"
+    android:theme="@android:style/ThemeOverlay.Material.Dark">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/negro" />
+
+    <TextView
+        android:id="@+id/mensaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tool"
+        android:textSize="20dp"
+        android:textColor="@color/blanquito"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:textStyle="bold"
+        android:text="1º Selecciona el usuario" />
+
+    <ListView
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_below="@id/mensaje"
+        android:clickable="true"
+        android:listSelector="@android:color/holo_green_dark"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="10dp"
+        android:focusable="true"
+        android:visibility="visible"
+        android:id="@+id/listView7" />
+
+    <TextView
+        android:id="@+id/mensaje2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tool"
+        android:textSize="20dp"
+        android:layout_marginTop="60dp"
+        android:textColor="@color/blanquito"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"
+        android:text="2º Cambia los datos" />
+
+    <EditText
+        android:id="@+id/nombre1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="30dp"
+        android:visibility="gone"
+        android:layout_marginRight="30dp"
+        android:hint="Nombre" />
+
+    <EditText
+        android:id="@+id/direccion1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="30dp"
+        android:visibility="gone"
+        android:layout_marginRight="30dp"
+        android:hint="Correo electrónico" />
+
+    <Spinner
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:id="@+id/spinnerrol"
+        android:layout_below="@id/direccion1"
+        android:spinnerMode="dialog"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="38dp" />
+
+
+    <ImageView
+        android:id="@+id/botonCan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:visibility="gone"
+        android:src="@drawable/cancelar1"
+        android:layout_gravity="center_horizontal"
+
+
+        />
+
+    <ImageView
+        android:id="@+id/botonModificar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/aceptar1"
+        android:visibility="gone"
+
+        />
+
+
+</LinearLayout>

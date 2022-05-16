@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/copia2"
+    android:theme="@android:style/ThemeOverlay.Material.Dark">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarRegistrarse"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/negro" />
+
+
+    <EditText
+        android:id="@+id/nombre1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbarRegistrarse"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="30dp"
+        android:hint="Nombre"
+        android:minHeight="48dp" />
+
+
+    <EditText
+        android:id="@+id/contraseña1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nombre1"
+
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/direccion1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contraseña1"
+
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Correo electrónico"
+        android:minHeight="48dp" />
+
+
+    <ImageView
+        android:id="@+id/botonCancelarXML"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/cancelar1"
+        android:layout_below="@id/botonAceptarXML"
+        android:layout_centerHorizontal="true"
+
+
+        />
+
+
+    <ImageView
+        android:id="@+id/captchaImagen"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+
+        android:layout_below="@id/direccion1"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/capcha"
+        android:layout_marginRight="20dp" />
+
+    <EditText
+        android:id="@+id/respuesta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/direccion1"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_toRightOf="@id/captchaImagen"
+        android:hint="Pulsa y escribe el audio"
+        android:minHeight="48dp" />
+
+
+    <ImageView
+        android:id="@+id/botonAceptarXML"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/captchaImagen"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/aceptar1"
+        android:layout_marginRight="20dp" />
+
+</RelativeLayout>

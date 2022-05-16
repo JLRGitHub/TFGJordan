@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/copia2"
+    android:theme="@android:style/ThemeOverlay.Material.Dark">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarAñadir"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/negro" />
+
+
+    <TextView
+        android:id="@+id/titulo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/titulin"
+        android:textColor="@color/roji"
+        android:text=""
+        android:textSize="30dp"></TextView>
+
+    <EditText
+        android:id="@+id/nombreInsertar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titulo1"
+        android:textColorHint="@color/blanquito"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Nombre" />
+
+
+    <EditText
+        android:id="@+id/contraseñaInsertar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nombreInsertar"
+        android:textColorHint="@color/blanquito"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Contraseña"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/direccionInsertar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contraseñaInsertar"
+        android:textColorHint="@color/blanquito"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Correo electrónico" />
+
+    <Spinner
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:id="@+id/spPais"
+
+        android:layout_below="@id/direccionInsertar"
+        android:spinnerMode="dialog"
+        android:layout_width="match_parent"
+        android:layout_height="38dp" />
+
+
+    <ImageView
+        android:id="@+id/botonAceptarXML2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:src="@drawable/crearusuario"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+
+        />
+
+
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true"
+    android:interpolator="@android:anim/linear_interpolator">
+    <!--poniendo -20 me aseguro que empieza mas a la izquierda de como esta de origen -->
+    <translate
+        android:duration="5000"
+        android:fromXDelta="-20%p"
+        android:toXDelta="80%p" />
+
+</set>

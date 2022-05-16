@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "816278145945",
+    "firebase_url": "https://sistemaalarma-fb0ca.firebaseio.com",
+    "project_id": "sistemaalarma-fb0ca",
+    "storage_bucket": "sistemaalarma-fb0ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:816278145945:android:2e5e7baa81520f23d96108",
+        "android_client_info": {
+          "package_name": "es.jordan.sistemaalarma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "816278145945-non58hk1b0clcqm0hmc32gtgjnkmn8il.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACtM5Kg9nzuooNi7ePPLaWhZCWWUxeEho"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "816278145945-non58hk1b0clcqm0hmc32gtgjnkmn8il.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

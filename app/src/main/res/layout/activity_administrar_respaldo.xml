@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/copia2"
+    android:theme="@android:style/ThemeOverlay.Material.Dark">
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:id="@+id/tituloAdministrarRespaldo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:fontFamily="@font/titulin"
+        android:text=""
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp"
+        android:textColor="@color/roji"></TextView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarRespaldo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/negro" />
+
+
+    <ImageView
+        android:id="@+id/botonCopia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/hacercopia"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+
+        />
+
+    <ImageView
+        android:id="@+id/botonRecuperar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/restaurarcopia"
+        android:layout_below="@id/botonCopia"
+        android:layout_centerHorizontal="true"
+
+        />
+
+
+</RelativeLayout>

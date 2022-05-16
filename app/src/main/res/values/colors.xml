@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="azulon">#333c87</color>
+    <color name="blanquito">#ffffff</color>
+    <color name="roji">#F92C00</color>
+    <color name="zil">#00F926</color>
+    <color name="roji2">#F90000</color>
+    <color name="negro">#000000</color>
+
+</resources>

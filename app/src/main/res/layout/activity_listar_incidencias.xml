@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/copia2"
+
+    android:theme="@android:style/ThemeOverlay.Material.Dark">
+
+    <TextView
+        android:id="@+id/titulistar2"
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/titulin"
+        android:text=""
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/roji"></TextView>
+
+    <Spinner
+        android:id="@+id/spinnerlistarraspberrys"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/titulistar2"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        android:spinnerMode="dialog" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarListarIncidencias"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/negro" />
+
+
+    <ImageView
+
+        android:id="@+id/botonVer"
+        android:layout_below="@id/spinnerlistarraspberrys"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/notificacion"
+
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recicler2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/botonVer"
+        android:layout_marginTop="30dp"
+
+        android:visibility="invisible" />
+
+</RelativeLayout>
