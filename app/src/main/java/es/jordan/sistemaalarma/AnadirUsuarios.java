@@ -203,7 +203,7 @@ public class AnadirUsuarios extends AppCompatActivity {
      */
     public void insertarUsuario(Usuario usuario1) {
         try {
-            String equipoServidor = "servidorjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
+            String equipoServidor = "servidorwebjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
             //String equipoServidor = "servidorwebjordan.ddns.net";
             int puertoServidor = 30500;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);
@@ -247,7 +247,7 @@ public class AnadirUsuarios extends AppCompatActivity {
     public ArrayList<Usuario> obtenerLista() {
         ArrayList<Usuario> listaUsuarios = new ArrayList();
         try {
-            String equipoServidor = "servidorjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
+            String equipoServidor = "servidorwebjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
             //String equipoServidor = "servidorwebjordan.ddns.net";
             int puertoServidor = 30504;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);

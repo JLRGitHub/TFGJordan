@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText email1,
             contraseña1;
     private TTSManager ttsManager = null;
-    private String secretKey = "enigma";
+    private final String secretKey = "enigma";
 
 
     @Override
@@ -48,11 +48,11 @@ public class MainActivity extends AppCompatActivity {
         xmlToJava(); //metodo que enchufa el xml a java
         textoToVoz(); //metodo que convierte texto en voz
         activarAnimacion(); //metodo que activa una animacion
-        //Hashear e = new Hashear();
 
 
-        /**
-         * On click del boton registrar
+
+        /*
+          On click del boton registrar
          */
         botonRegistrar.setOnClickListener(v -> { //on click registrar
             Intent intent = new Intent(v.getContext(), Registrarse.class);
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        /**
+        /*
          * On click del boton iniciar
          */
         botonIniciar.setOnClickListener(v -> { //on click iniciar
@@ -86,8 +86,8 @@ public class MainActivity extends AppCompatActivity {
             usuario1.setContraseña(seguridad.encode(secretKey, contraseña1.getText().toString()));
 
 
-            Usuario usuarioCompleto = new Usuario();
-            usuarioCompleto = leerUsuario(usuario1);
+
+            Usuario usuarioCompleto = leerUsuario(usuario1);
             //ahora tenemos que mandar este usuario por sockets al servidor para que lo compruebe el con el CAD
             //y volcara sobre completo todos sus datos
 
@@ -227,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
     public Usuario leerUsuario(Usuario usuario1) {
         Usuario usuarioDeVuelta = new Usuario();
         try {
-             String equipoServidor = "servidorjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
+             String equipoServidor = "servidorwebjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
            // String equipoServidor = "servidorwebjordan.ddns.net"; usare un host de este estilo
              //String equipoServidor = "sistemalarma.ddns.net";
             int puertoServidor = 30566;

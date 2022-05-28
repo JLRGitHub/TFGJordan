@@ -8,7 +8,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -25,6 +24,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Objects;
 
 import pojos.Usuario;
 
@@ -48,6 +48,8 @@ public class ModificarUsuario extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modificar_usuario);
+
+
         final Usuario usuarioPasado = (Usuario) getIntent().getSerializableExtra(EXTRA_USUARIO);
         xmlToJava();
 
@@ -55,7 +57,7 @@ public class ModificarUsuario extends AppCompatActivity {
         toolbar = findViewById(R.id.tool);
       //  toolbar.setTitle("Administrador - " + usuarioPasado.getNombre());
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(true);
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
@@ -63,7 +65,7 @@ public class ModificarUsuario extends AppCompatActivity {
         //iniciando spinner
         spinner1.setPrompt("Selecciona un rol");
         String[] opciones = {"Admin", "Usuario", "Invitado"};
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, opciones);
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, opciones);
         spinner1.setAdapter(adapter3);
 
         final ArrayList<ItemAlarma> itemsCompra = obtenerItems();
@@ -73,30 +75,27 @@ public class ModificarUsuario extends AppCompatActivity {
         lv.setAdapter(adapter);
 
         final ItemAlarmaAdapter adaptador = new ItemAlarmaAdapter();
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-                editNombre.setVisibility(View.VISIBLE);
-                editEmail.setVisibility(View.VISIBLE);
-                spinner1.setVisibility(View.VISIBLE);
-                lv.setVisibility(View.GONE);
-                botonModificar.setVisibility(View.VISIBLE);
-                botonCan.setVisibility(View.VISIBLE);
-                mensaje.setVisibility(View.GONE);
-                mensaje2.setVisibility(View.VISIBLE);
+        lv.setOnItemClickListener((arg0, arg1, position, arg3) -> {
+            editNombre.setVisibility(View.VISIBLE);
+            editEmail.setVisibility(View.VISIBLE);
+            spinner1.setVisibility(View.VISIBLE);
+            lv.setVisibility(View.GONE);
+            botonModificar.setVisibility(View.VISIBLE);
+            botonCan.setVisibility(View.VISIBLE);
+            mensaje.setVisibility(View.GONE);
+            mensaje2.setVisibility(View.VISIBLE);
 
-                ItemAlarma itemSeleccionado = (ItemAlarma) adapter.getItem(position);
-                ultimoNombreSeleccionado = (itemSeleccionado.nombre); //metemos en variables globales el usuario elegido
-                ultimoEmailSeleccionado = (itemSeleccionado.tipo); //el tipo es el email
+            ItemAlarma itemSeleccionado = (ItemAlarma) adapter.getItem(position);
+            ultimoNombreSeleccionado = (itemSeleccionado.nombre); //metemos en variables globales el usuario elegido
+            ultimoEmailSeleccionado = (itemSeleccionado.tipo); //el tipo es el email
 
 
-                editNombre.setText(itemSeleccionado.nombre);
-                editEmail.setText(itemSeleccionado.tipo); // corresponde al mail
+            editNombre.setText(itemSeleccionado.nombre);
+            editEmail.setText(itemSeleccionado.tipo); // corresponde al mail
 
 
-                //lo que queremos hacer al clickar
+            //lo que queremos hacer al clickar
 
-            }
         });
 
         /**
@@ -109,7 +108,7 @@ public class ModificarUsuario extends AppCompatActivity {
 
             //recorremos la lista hasta encontrar el usuario y luego lo mandamos al server para q lo modifique
             for (Usuario u : listaUsuarios) {
-                if (u.getNombre().toString().equals(ultimoNombreSeleccionado) && u.getEmail().equals(ultimoEmailSeleccionado)) {
+                if (u.getNombre().equals(ultimoNombreSeleccionado) && u.getEmail().equals(ultimoEmailSeleccionado)) {
                     //Toast toast2 = Toast.makeText(getApplicationContext(),"He encontrado al usuario "+ultimoNombreSeleccionado, Toast.LENGTH_LONG);
                     //toast2.show();
                     Usuario usuarioAModificar = new Usuario(); //creamos un usuario poniendo lo que pone en las cajas
@@ -134,15 +133,15 @@ public class ModificarUsuario extends AppCompatActivity {
             startActivity(llamada);
 
         });
-        /**
+        /*
          * onclick vaciar texto cuando clicas edit nombre
          */
         editNombre.setOnClickListener(v -> editNombre.setText(""));
-        /**
+        /*
          * onclick vaciar texto
          */
         editEmail.setOnClickListener(v -> editEmail.setText(""));
-        /**
+        /*
          * volver atras al cancelar
          */
         botonCan.setOnClickListener(v -> {
@@ -231,8 +230,7 @@ public class ModificarUsuario extends AppCompatActivity {
     public ArrayList<Usuario> obtenerLista() {
         ArrayList<Usuario> listaUsuarios = new ArrayList();
         try {
-            String equipoServidor = "servidorjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
-            //String equipoServidor = "servidorwebjordan.ddns.net";
+            String equipoServidor = "servidorwebjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
             int puertoServidor = 30504;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);
 
@@ -257,25 +255,25 @@ public class ModificarUsuario extends AppCompatActivity {
      * @return el/la array list
      */
     public ArrayList<ItemAlarma> obtenerItems() {
-        ArrayList<ItemAlarma> listaDelListView = new ArrayList<ItemAlarma>();//lista con los atributos del litview
-        ArrayList<Usuario> listaUsuarios = new ArrayList();
+        ArrayList<ItemAlarma> listaDelListView = new ArrayList<>();//lista con los atributos del litview
+        ArrayList<Usuario> listaUsuarios;
         listaUsuarios = obtenerLista(); //recorremos la lista de usuarios y metemos la informacion que queremos
         for (Usuario usuario1 : listaUsuarios) {
 
             if (usuario1.getRol().equalsIgnoreCase("ADMIN")) {
                 int id = usuario1.getUsuarioId();
-                String nombre = usuario1.getNombre().toString();
-                String correo = usuario1.getEmail().toString();
+                String nombre = usuario1.getNombre();
+                String correo = usuario1.getEmail();
                 listaDelListView.add(new ItemAlarma(id, nombre, correo, "drawable/adming3"));
             } else if (usuario1.getRol().equalsIgnoreCase("USUARIO")) {
                 int id = usuario1.getUsuarioId();
-                String nombre = usuario1.getNombre().toString();
-                String correo = usuario1.getEmail().toString();
+                String nombre = usuario1.getNombre();
+                String correo = usuario1.getEmail();
                 listaDelListView.add(new ItemAlarma(id, nombre, correo, "drawable/usuariog3"));
             } else {
                 int id = usuario1.getUsuarioId();
-                String nombre = usuario1.getNombre().toString();
-                String correo = usuario1.getEmail().toString();
+                String nombre = usuario1.getNombre();
+                String correo = usuario1.getEmail();
                 listaDelListView.add(new ItemAlarma(id, nombre, correo, "drawable/invitadog3"));
             }
 
@@ -293,8 +291,8 @@ public class ModificarUsuario extends AppCompatActivity {
      */
     public void modificarUsuario(Usuario usuario1) {
         try {
-            String equipoServidor = "servidorjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
-            //String equipoServidor = "servidorwebjordan.ddns.net";
+            String equipoServidor = "servidorwebjordan.ddns.net";
+
             int puertoServidor = 30582;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);
             gestionarComunicacion(socketCliente, usuario1);

@@ -240,7 +240,7 @@ public class Streaming extends AppCompatActivity {
         try {
 
             //1º paso conectarse al servidor
-            String equipoServidor = "servidorjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
+            String equipoServidor = "servidorwebjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
             //String equipoServidor = "servidorwebjordan.ddns.net";
             int puertoServidor = 30560;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);

@@ -29,6 +29,7 @@ import pojos.Usuario;
 /**
  * Eliminar usuario.
  */
+@SuppressWarnings("ALL")
 public class EliminarUsuario extends AppCompatActivity {
 
     private ImageView eliminarUsu;
@@ -164,8 +165,7 @@ public class EliminarUsuario extends AppCompatActivity {
      */
     public void eliminarUsu(Usuario usuario1) {
         try {
-            String equipoServidor = "servidorjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
-            //String equipoServidor = "servidorwebjordan.ddns.net";
+            String equipoServidor = "servidorwebjordan.ddns.net";
             int puertoServidor = 30503;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);
             gestionarComunicacion(socketCliente, usuario1);
@@ -265,24 +265,24 @@ public class EliminarUsuario extends AppCompatActivity {
      */
     public ArrayList<ItemAlarma> obtenerItems() {
         ArrayList<ItemAlarma> listaDelListView = new ArrayList<>();//lista con los atributos del litview
-        ArrayList<Usuario> listaUsuarios = new ArrayList();
+        ArrayList<Usuario> listaUsuarios;
         listaUsuarios = obtenerLista(); //recorremos la lista de usuarios y metemos la informacion que queremos
         for (Usuario usuario1 : listaUsuarios) {
 
             if (usuario1.getRol().equalsIgnoreCase("ADMIN")) {
                 int id = usuario1.getUsuarioId();
-                String nombre = usuario1.getNombre().toString();
-                String correo = usuario1.getEmail().toString();
+                String nombre = usuario1.getNombre();
+                String correo = usuario1.getEmail();
                 listaDelListView.add(new ItemAlarma(id, nombre, correo, "drawable/adming3"));
             } else if (usuario1.getRol().equalsIgnoreCase("USUARIO")) {
                 int id = usuario1.getUsuarioId();
-                String nombre = usuario1.getNombre().toString();
-                String correo = usuario1.getEmail().toString();
+                String nombre = usuario1.getNombre();
+                String correo = usuario1.getEmail();
                 listaDelListView.add(new ItemAlarma(id, nombre, correo, "drawable/usuariog3"));
             } else {
                 int id = usuario1.getUsuarioId();
-                String nombre = usuario1.getNombre().toString();
-                String correo = usuario1.getEmail().toString();
+                String nombre = usuario1.getNombre();
+                String correo = usuario1.getEmail();
                 listaDelListView.add(new ItemAlarma(id, nombre, correo, "drawable/invitadog3"));
             }
 
@@ -302,8 +302,8 @@ public class EliminarUsuario extends AppCompatActivity {
     public ArrayList<Usuario> obtenerLista() {
         ArrayList<Usuario> listaUsuarios = new ArrayList();
         try {
-            String equipoServidor = ""; //para pruebas locales , la version definitiva podrá salir de la red local
-          //  String equipoServidor = "servidorwebjordan.ddns.net";
+
+       String equipoServidor = "servidorwebjordan.ddns.net";
             int puertoServidor = 30504;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);
 
@@ -333,8 +333,7 @@ public class EliminarUsuario extends AppCompatActivity {
         try {
 
             //1º paso conectarse al servidor
-            String equipoServidor = "servidorjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
-            //String equipoServidor = "servidorwebjordan.ddns.net";
+            String equipoServidor = "servidorwebjordan.ddns.net";
             int puertoServidor = 30560;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);
             //2º paso mandar el usuario que esta conectado como objeto
