@@ -164,7 +164,7 @@ public class EliminarUsuario extends AppCompatActivity {
      */
     public void eliminarUsu(Usuario usuario1) {
         try {
-            String equipoServidor = "13.37.217.86"; //para pruebas locales , la version definitiva podrá salir de la red local
+            String equipoServidor = "servidorjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
             //String equipoServidor = "servidorwebjordan.ddns.net";
             int puertoServidor = 30503;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);
@@ -333,7 +333,7 @@ public class EliminarUsuario extends AppCompatActivity {
         try {
 
             //1º paso conectarse al servidor
-            String equipoServidor = "13.37.217.86"; //para pruebas locales , la version definitiva podrá salir de la red local
+            String equipoServidor = "servidorjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
             //String equipoServidor = "servidorwebjordan.ddns.net";
             int puertoServidor = 30560;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);

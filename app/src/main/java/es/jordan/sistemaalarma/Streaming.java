@@ -105,8 +105,7 @@ public class Streaming extends AppCompatActivity {
 
 
                 String[] datos = eleccion.split(":");
-// este metodo esta pensado por si se utiliza una ip fija asociada a un nombre de host en paginas
-                //similares a no-ip. com por ejemplo si fuera alarmajordan vamos separandos los datos
+            // separamos el nombre  y esta pensado por si se utiliza un dominio fijo a una ip despues por el el puerto 8080 visualizamos la cam
                 ipCamaraElegida = datos[2] + ":" + datos[3] + ":" + datos[4]; //en el array en la segunda posicion tenemos hasta los : de http
                 //y en el 3 lo q queda en la 4 el puerto los puntos los añado por el split
 
@@ -241,7 +240,7 @@ public class Streaming extends AppCompatActivity {
         try {
 
             //1º paso conectarse al servidor
-            String equipoServidor = "13.37.217.86"; //para pruebas locales , la version definitiva podrá salir de la red local
+            String equipoServidor = "servidorjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
             //String equipoServidor = "servidorwebjordan.ddns.net";
             int puertoServidor = 30560;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);
