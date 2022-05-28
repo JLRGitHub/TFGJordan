@@ -231,7 +231,7 @@ public class ModificarUsuario extends AppCompatActivity {
     public ArrayList<Usuario> obtenerLista() {
         ArrayList<Usuario> listaUsuarios = new ArrayList();
         try {
-            String equipoServidor = "13.38.119.204"; //para pruebas locales , la version definitiva podrá salir de la red local
+            String equipoServidor = "13.37.217.86"; //para pruebas locales , la version definitiva podrá salir de la red local
             //String equipoServidor = "servidorwebjordan.ddns.net";
             int puertoServidor = 30504;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);
@@ -293,7 +293,7 @@ public class ModificarUsuario extends AppCompatActivity {
      */
     public void modificarUsuario(Usuario usuario1) {
         try {
-            String equipoServidor = "13.38.119.204"; //para pruebas locales , la version definitiva podrá salir de la red local
+            String equipoServidor = "13.37.217.86"; //para pruebas locales , la version definitiva podrá salir de la red local
             //String equipoServidor = "servidorwebjordan.ddns.net";
             int puertoServidor = 30582;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);

@@ -80,8 +80,8 @@ public class Streaming extends AppCompatActivity {
         //necesito obtener el id de usuario y el id de raspberry para en funcion de eso cargar una direccion
 
 
-        // webView.loadUrl("http://alarmacaserajordan.ddns.net:8081/");
-
+        webView.loadUrl("http://raspberryalarma.ddns.net:8081");
+// enseñamos en el navegador la web y puerto donde esta la raspberry retransmitiendo
         /**
          * on click del boton ver
          */
@@ -91,9 +91,22 @@ public class Streaming extends AppCompatActivity {
 
             } else { //cogemos la ip que esta entre la posicion 2 y 4
                 String ipCamaraElegida = "";
-                String eleccion = spinner.getSelectedItem().toString();
-                String[] datos = eleccion.split(":");
 
+
+
+
+
+
+                String eleccion = spinner.getSelectedItem().toString();
+
+                //cogemos la cadena donde es la direccion ip y la separamos por puntos
+                String[] numeroIp= eleccion.split(".");
+
+
+
+                String[] datos = eleccion.split(":");
+// este metodo esta pensado por si se utiliza una ip fija asociada a un nombre de host en paginas
+                //similares a no-ip. com por ejemplo si fuera alarmajordan vamos separandos los datos
                 ipCamaraElegida = datos[2] + ":" + datos[3] + ":" + datos[4]; //en el array en la segunda posicion tenemos hasta los : de http
                 //y en el 3 lo q queda en la 4 el puerto los puntos los añado por el split
 
@@ -228,7 +241,7 @@ public class Streaming extends AppCompatActivity {
         try {
 
             //1º paso conectarse al servidor
-            String equipoServidor = "13.38.119.204"; //para pruebas locales , la version definitiva podrá salir de la red local
+            String equipoServidor = "13.37.217.86"; //para pruebas locales , la version definitiva podrá salir de la red local
             //String equipoServidor = "servidorwebjordan.ddns.net";
             int puertoServidor = 30560;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);

@@ -144,7 +144,7 @@ public class AdministrarRespaldo extends AppCompatActivity {
     public void avisarServer() {
 
         try {
-            String equipoServidor = "13.38.119.204"; //para pruebas locales , la version definitiva podrá salir de la red local
+            String equipoServidor = "13.37.217.86"; //para pruebas locales , la version definitiva podrá salir de la red local
             //String equipoServidor = "servidorwebjordan.ddns.net";
             int puertoServidor = 30520;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);
@@ -166,7 +166,7 @@ public class AdministrarRespaldo extends AppCompatActivity {
      */
     public void recuperarServer() {
         try {
-            String equipoServidor = "13.38.119.204"; //para pruebas locales , la version definitiva podrá salir de la red local
+            String equipoServidor = "13.37.217.86"; //para pruebas locales , la version definitiva podrá salir de la red local
             //String equipoServidor = "servidorwebjordan.ddns.net";
             int puertoServidor = 30530;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);

@@ -64,7 +64,7 @@ public class MenuAdmin extends AppCompatActivity {
         /**
          * onclick añadir usuario
          */
-        //on click añadir usuario
+        //on click añadir usuariosh
         añadir.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), AnadirUsuarios.class);
             intent.putExtra(EXTRA_USUARIO, usuarioPasado);
