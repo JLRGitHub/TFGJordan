@@ -176,7 +176,7 @@ public class ListarUsuarios extends AppCompatActivity {
     public ArrayList<Usuario> obtenerLista() {
         ArrayList<Usuario> listaUsuarios = new ArrayList();
         try {
-            String equipoServidor = "servidorjordan.ddns.net";
+            String equipoServidor = "servidorwebjordan.ddns.net";
             //String equipoServidor = "servidorwebjordan.ddns.net";
             int puertoServidor = 30504;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);

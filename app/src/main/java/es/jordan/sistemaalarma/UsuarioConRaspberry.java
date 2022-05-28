@@ -231,7 +231,7 @@ public class UsuarioConRaspberry extends AppCompatActivity implements Serializab
     public ArrayList<Raspberry> obtenerListaRaspberry() {
         ArrayList<Raspberry> listaRaspberrys = new ArrayList();
         try {
-            String equipoServidor = "servidorjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
+            String equipoServidor = "servidorwebjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
             //String equipoServidor = "servidorwebjordan.ddns.net";
             int puertoServidor = 30510;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);
@@ -260,7 +260,7 @@ public class UsuarioConRaspberry extends AppCompatActivity implements Serializab
      */
     public void insertarRaspberryEnUsuario(int idUsuario, int idRaspberry) { //con el for recorreremos la lista de checkbox e iremos insertando
         try {
-            String equipoServidor = "servidorjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
+            String equipoServidor = "servidorwebjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
            // String equipoServidor = "servidorwebjordan.ddns.net";
             int puertoServidor = 30800;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);
@@ -289,7 +289,7 @@ public class UsuarioConRaspberry extends AppCompatActivity implements Serializab
      */
     public void eliminarUsurasSeleccionado(int idUsuario) {
         try {
-            String equipoServidor = "servidorjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
+            String equipoServidor = "servidorwebjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
            // String equipoServidor = "servidorwebjordan.ddns.net";
             int puertoServidor = 30799;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);
@@ -319,7 +319,7 @@ public class UsuarioConRaspberry extends AppCompatActivity implements Serializab
     public ArrayList<Usuario> obtenerLista() {
         ArrayList<Usuario> listaUsuarios = new ArrayList();
         try {
-            String equipoServidor = "servidorjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
+            String equipoServidor = "servidorwebjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
             //String equipoServidor = "servidorwebjordan.ddns.net";
             int puertoServidor = 30504;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);

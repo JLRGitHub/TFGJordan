@@ -227,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
     public Usuario leerUsuario(Usuario usuario1) {
         Usuario usuarioDeVuelta = new Usuario();
         try {
-             String equipoServidor = "servidorjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
+             String equipoServidor = "servidorwebjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
            // String equipoServidor = "servidorwebjordan.ddns.net"; usare un host de este estilo
              //String equipoServidor = "sistemalarma.ddns.net";
             int puertoServidor = 30566;
