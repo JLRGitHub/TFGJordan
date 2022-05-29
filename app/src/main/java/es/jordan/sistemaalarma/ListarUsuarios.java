@@ -12,17 +12,14 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.Socket;
 import java.util.ArrayList;
-
 import adaptadores.AdaptadorDatos;
 import adaptadores.DatosRecicler;
 import pojos.Usuario;
@@ -157,7 +154,7 @@ public class ListarUsuarios extends AppCompatActivity {
      */
     public void xmlToJava() {
 
-        miLista = new ArrayList<DatosRecicler>();
+        miLista = new ArrayList<>();
         miRecycler = findViewById(R.id.recicler);
         b1 = findViewById(R.id.b1);
         b2 = findViewById(R.id.b2);
@@ -242,7 +239,7 @@ public class ListarUsuarios extends AppCompatActivity {
         miRecycler.setLayoutManager(new LinearLayoutManager(this));
 
         AdaptadorDatos elAdaptador = new AdaptadorDatos(miLista);
-        miLista = new ArrayList<DatosRecicler>();
+        miLista = new ArrayList<>();
         System.out.println(listaUsuarios);
         for (Usuario aux : listaUsuarios) {
 
@@ -297,7 +294,7 @@ public class ListarUsuarios extends AppCompatActivity {
         miRecycler.setLayoutManager(new LinearLayoutManager(this));
 
         AdaptadorDatos elAdaptador = new AdaptadorDatos(miLista);
-        miLista = new ArrayList<DatosRecicler>();
+        miLista = new ArrayList<>();
         System.out.println(listaUsuarios);
         for (Usuario aux : listaUsuarios) {
 

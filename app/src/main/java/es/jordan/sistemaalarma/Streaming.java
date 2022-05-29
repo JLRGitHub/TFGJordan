@@ -18,16 +18,15 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import pojos.Raspberry;
 import pojos.Usuario;
@@ -54,7 +53,7 @@ public class Streaming extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar5);
         toolbar.setTitle("Usuario VIP - " + usuarioPasado.getNombre());
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(true);
 
 
         configuracionWebView();
@@ -73,7 +72,7 @@ public class Streaming extends AppCompatActivity {
         spinner = findViewById(R.id.spinnerverstreaming);
         spinner.setPrompt("Elige webcam a visualizar");
 
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, opciones4);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, opciones4);
         spinner.setAdapter(adapter2);
 
 
@@ -90,7 +89,7 @@ public class Streaming extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Sin raspberrys asignadas", Toast.LENGTH_SHORT).show();
 
             } else { //cogemos la ip que esta entre la posicion 2 y 4
-                String ipCamaraElegida = "";
+
 
 
 
@@ -106,7 +105,7 @@ public class Streaming extends AppCompatActivity {
 
                 String[] datos = eleccion.split(":");
             // separamos el nombre  y esta pensado por si se utiliza un dominio fijo a una ip despues por el el puerto 8080 visualizamos la cam
-                ipCamaraElegida = datos[2] + ":" + datos[3] + ":" + datos[4]; //en el array en la segunda posicion tenemos hasta los : de http
+                String ipCamaraElegida = datos[2] + ":" + datos[3] + ":" + datos[4]; //en el array en la segunda posicion tenemos hasta los : de http
                 //y en el 3 lo q queda en la 4 el puerto los puntos los añado por el split
 
 

@@ -1,7 +1,6 @@
 package es.jordan.sistemaalarma;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,13 +8,11 @@ import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -57,12 +54,10 @@ public class MenuInvitado extends AppCompatActivity {
     protected void onResume() { //cuando la actividad es visible
         //el handler es similar a un hilo en android
 
-        handler.postDelayed(runnable = new Runnable() {
-            public void run() {
+        handler.postDelayed(runnable = () -> {
 
-                Toast.makeText(getApplicationContext(), "Si te ha gustado el video, solicita mas información", Toast.LENGTH_LONG).show();
-                handler.postDelayed(runnable, intervaloDeTiempo);
-            }
+            Toast.makeText(getApplicationContext(), "Si te ha gustado el video, solicita mas información", Toast.LENGTH_LONG).show();
+            handler.postDelayed(runnable, intervaloDeTiempo);
         }, intervaloDeTiempo);
 
         super.onResume();
