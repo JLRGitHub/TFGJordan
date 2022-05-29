@@ -49,12 +49,28 @@ public class MenuVip extends AppCompatActivity {
         /**
          * onclick ver galeria de fotos
          */
+
+
         BotonVerFotos.setOnClickListener(v -> {
 
-            //esto abre el email que tengamos configurado por defecto en android que sera el que utilicemos
-            //para recibir las fotos
-            Intent intent = getPackageManager().getLaunchIntentForPackage("com.android.email");
+                //esto abre el email que tengamos configurado por defecto en android que sera el que utilicemos
+                //para recibir las fotos
+
+
+               // Intent intent = getPackageManager().getLaunchIntentForPackage("com.android.email");
+               // startActivity(intent);
+
+            try {// atrapamos con un try catch si hubiera un problema de permisos
+                // y no se pudiera abrir el correo no se cierra la app
+
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_APP_EMAIL);
             startActivity(intent);
+            } catch(Exception e) {}
+
+
+
+
         });
         /**
          * onclick boton auxilio

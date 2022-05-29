@@ -76,7 +76,7 @@ public class ListarUsuarios extends AppCompatActivity {
         AdaptadorDatos elAdaptador = new AdaptadorDatos(miLista);
         ArrayList<Usuario> listaUsuarios = new ArrayList();
         listaUsuarios = obtenerLista();
-        miLista = new ArrayList<DatosRecicler>();
+        miLista = new ArrayList<>();
         System.out.println(listaUsuarios);
         for (Usuario aux : listaUsuarios) {
 

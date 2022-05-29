@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
     package="es.jordan.sistemaalarma">
 
     <permission
@@ -67,6 +68,8 @@
 
         </activity>
 
+
+
         <activity android:name=".PreCarga"
             android:exported="true">
             <intent-filter>
@@ -108,5 +111,9 @@
                 android:resource="@xml/file_paths" />
         </provider>
     </application>
-
+    <queries>
+        <package android:name="com.google.android.youtube" />
+        <package android:name="com.google.android.email" />
+        <package android:name="com.example.app" />
+    </queries>
 </manifest>
