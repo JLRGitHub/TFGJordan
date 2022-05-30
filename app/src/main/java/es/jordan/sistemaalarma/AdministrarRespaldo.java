@@ -42,7 +42,8 @@ public class AdministrarRespaldo extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        /**
+        /** Esta clase esta preparada para en un futuro ampliar el proyecto y realizar copias de seguridad automaticas en la nube
+         * a través de EBS
          * on click en la imagen hacer copia de seguridad
          */
         //on click de desconectar
@@ -140,7 +141,7 @@ public class AdministrarRespaldo extends AppCompatActivity {
 
         try {
             String equipoServidor = "servidorwebjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
-            //String equipoServidor = "servidorwebjordan.ddns.net";
+
             int puertoServidor = 30520;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);
             OutputStream socketSalida = socketCliente.getOutputStream();
@@ -162,7 +163,7 @@ public class AdministrarRespaldo extends AppCompatActivity {
     public void recuperarServer() {
         try {
             String equipoServidor = "servidorwebjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
-            //String equipoServidor = "servidorwebjordan.ddns.net";
+
             int puertoServidor = 30530;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);
             OutputStream socketSalida2 = socketCliente.getOutputStream();

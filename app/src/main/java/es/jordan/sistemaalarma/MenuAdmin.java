@@ -100,7 +100,7 @@ public class MenuAdmin extends AppCompatActivity {
      */
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.pesysalida, menu);
+        inflater.inflate(R.menu.mimenusolosalida, menu);
         return true;
     }
 
@@ -116,14 +116,18 @@ public class MenuAdmin extends AppCompatActivity {
                 startActivityForResult(intent, 0);
                 return true;
 
-            case R.id.item2: //icono disco duro
+
+           //menu preparado por si un día se amplia el proyecto y se permite hacer copias de seguridad automaticas en EBS
+            //de momento se realizaran manualmente y semanalmente. Este icono se dirigiría a administrar respaldo.
+
+         /*   case R.id.item2: //icono disco duro
                 Intent intent2 = new Intent(getApplicationContext(), AdministrarRespaldo.class);
                 final Usuario usuarioPasado = (Usuario) getIntent().getSerializableExtra(EXTRA_USUARIO);
                 intent2.putExtra(EXTRA_USUARIO, usuarioPasado);
                 startActivityForResult(intent2, 0);
 
                 return true;
-
+*/
             case R.id.item3: //icono salir
                 AlertDialog.Builder alert = new AlertDialog.Builder(MenuAdmin.this);
                 alert.setTitle("Advertencia");

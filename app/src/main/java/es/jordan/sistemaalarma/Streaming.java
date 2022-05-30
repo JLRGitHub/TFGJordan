@@ -78,9 +78,9 @@ public class Streaming extends AppCompatActivity {
 
         //necesito obtener el id de usuario y el id de raspberry para en funcion de eso cargar una direccion
 
+         webView.loadUrl("http://10.137.0.128:8081"); // enseñamos en el navegador la web y puerto donde esta la raspberry retransmitiendo
+       // webView.loadUrl("http://raspberryalarma.ddns.net:8081"); si se tiene dominio
 
-        webView.loadUrl("http://raspberryalarma.ddns.net:8081");
-// enseñamos en el navegador la web y puerto donde esta la raspberry retransmitiendo
         /**
          * on click del boton ver
          */
@@ -97,7 +97,7 @@ public class Streaming extends AppCompatActivity {
 
 
                 String eleccion = spinner.getSelectedItem().toString();
-
+               /* metodo para separar un dominio de su puerto e introducirlo en el loardurl
                 //cogemos la cadena donde es la direccion ip y la separamos por puntos
                 String[] numeroIp= eleccion.split(".");
 
@@ -107,9 +107,9 @@ public class Streaming extends AppCompatActivity {
             // separamos el nombre  y esta pensado por si se utiliza un dominio fijo a una ip despues por el el puerto 8080 visualizamos la cam
                 String ipCamaraElegida = datos[2] + ":" + datos[3] + ":" + datos[4]; //en el array en la segunda posicion tenemos hasta los : de http
                 //y en el 3 lo q queda en la 4 el puerto los puntos los añado por el split
+*/
 
-
-                webView.loadUrl(ipCamaraElegida);
+                webView.loadUrl(eleccion);
                 webView.setVisibility(View.VISIBLE);
 
             }
@@ -240,7 +240,6 @@ public class Streaming extends AppCompatActivity {
 
             //1º paso conectarse al servidor
             String equipoServidor = "servidorwebjordan.ddns.net"; //para pruebas locales , la version definitiva podrá salir de la red local
-            //String equipoServidor = "servidorwebjordan.ddns.net";
             int puertoServidor = 30560;
             Socket socketCliente = new Socket(equipoServidor, puertoServidor);
             //2º paso mandar el usuario que esta conectado como objeto
